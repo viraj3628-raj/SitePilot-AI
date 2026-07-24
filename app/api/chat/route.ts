@@ -1,0 +1,27 @@
+import { GoogleGenAI } from "@google/genai";
+
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY!,
+});
+
+export async function POST(req: Request) {
+  try {
+    const { message } = await req.json();
+
+    const response = await ai.models.generateContent({
+   model: "gemini-flash-latest",
+      contents: message,
+    });
+
+    return Response.json({
+      reply: response.text,
+    });
+  } catch (error) {
+    console.error(error);
+
+    return Response.json(
+      { reply: "Error: Gemini AI is not available." },
+      { status: 500 }
+    );
+  }
+}
