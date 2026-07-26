@@ -6,8 +6,9 @@ export default function FeatureCard({
   text: string;
 }) {
   return (
-    <div className="rounded-2xl border border-gray-800 bg-gradient-to-br from-gray-900 to-black p-6 hover:scale-105 transition">
-      <h3 className="text-xl font-bold">
+    <div className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20">
+
+      <h3 className="text-2xl font-bold text-white">
         {title}
       </h3>
 
@@ -15,9 +16,10 @@ export default function FeatureCard({
         {text}
       </p>
 
-      <button className="mt-5 rounded-xl bg-white text-black px-4 py-2">
-        Open Tool
+      <button className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 py-3 font-semibold text-white transition hover:scale-105">
+        Open Tool →
       </button>
+
     </div>
   );
 }
