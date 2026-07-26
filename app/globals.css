@@ -133,3 +133,26 @@ body{
     @apply font-sans;
   }
 }
+
+body{
+  background: radial-gradient(circle at top,#1e3a8a,#09090b 55%);
+  color:white;
+}
+
+.glass{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+}
+
+.gradient-btn{
+  background:linear-gradient(90deg,#2563eb,#7c3aed);
+  color:#fff;
+  transition:.3s;
+}
+
+.gradient-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 30px rgba(59,130,246,.45);
+}
