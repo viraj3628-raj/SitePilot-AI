@@ -1,6 +1,7 @@
 import StatsCard from "./StatsCard";
 import FeatureCard from "./FeatureCard";
 import QuickActions from "./QuickActions";
+import ChatBox from "./ChatBox";
 
 export default function Dashboard() {
   return (
@@ -65,6 +66,8 @@ export default function Dashboard() {
       <div className="mt-10">
         <QuickActions />
       </div>
+
+      <ChatBox />
 
     </div>
   );
