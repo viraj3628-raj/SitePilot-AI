@@ -1,11 +1,11 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY!,
-});
-
 export async function POST(req: Request) {
   try {
+    const ai = new GoogleGenAI({
+      apiKey: process.env.GEMINI_API_KEY!,
+    });
+
     const { message } = await req.json();
 
     const response = await ai.models.generateContent({
@@ -20,8 +20,10 @@ export async function POST(req: Request) {
     console.error(error);
 
     return Response.json(
-  {
-    reply: error instanceof Error ? error.message : String(error),
-  },
-  { status: 500 }
-);
+      {
+        reply: error instanceof Error ? error.message : String(error),
+      },
+      { status: 500 }
+    );
+  }
+}
