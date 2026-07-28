@@ -20,8 +20,8 @@ export async function POST(req: Request) {
     console.error(error);
 
     return Response.json(
-      { reply: "Error: Gemini AI is not available." },
-      { status: 500 }
-    );
-  }
-}
+  {
+    reply: error instanceof Error ? error.message : String(error),
+  },
+  { status: 500 }
+);
