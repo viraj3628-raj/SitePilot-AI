@@ -1,9 +1,14 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import StatsCard from "./StatsCard";
 import FeatureCard from "./FeatureCard";
 import QuickActions from "./QuickActions";
 import ChatBox from "./ChatBox";
 
 export default function Dashboard() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-zinc-950 via-slate-900 to-blue-950 text-white p-8">
 
@@ -32,34 +37,40 @@ export default function Dashboard() {
       <div className="grid md:grid-cols-3 gap-6">
 
         <FeatureCard
-          title="🌐 AI Website Builder"
-          text="Create premium websites with AI"
-        />
+  title="🌐 AI Website Builder"
+  text="Create premium websites with AI"
+  onClick={() => router.push("/website")}
+/>
 
-        <FeatureCard
-          title="📈 SEO Optimizer"
-          text="Improve Google rankings automatically"
-        />
+<FeatureCard
+  title="📈 SEO Optimizer"
+  text="Improve Google rankings automatically"
+  onClick={() => router.push("/seo")}
+/>
 
-        <FeatureCard
-          title="📝 AI Blog Writer"
-          text="Generate SEO-friendly articles"
-        />
+<FeatureCard
+  title="📝 AI Blog Writer"
+  text="Generate SEO-friendly articles"
+  onClick={() => router.push("/blog")}
+/>
 
-        <FeatureCard
-          title="🖼 AI Image Generator"
-          text="Create AI images instantly"
-        />
+<FeatureCard
+  title="🖼 AI Image Generator"
+  text="Create AI images instantly"
+  onClick={() => router.push("/image")}
+/>
 
-        <FeatureCard
-          title="📊 Analytics"
-          text="Track traffic and performance"
-        />
+<FeatureCard
+  title="📊 Analytics"
+  text="Track traffic and performance"
+  onClick={() => router.push("/analytics")}
+/>
 
-        <FeatureCard
-          title="⚙️ Settings"
-          text="Manage your AI workspace"
-        />
+<FeatureCard
+  title="⚙️ Settings"
+  text="Manage your AI workspace"
+  onClick={() => router.push("/settings")}
+/>
 
       </div>
 
